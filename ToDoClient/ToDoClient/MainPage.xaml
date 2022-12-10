@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoClient.MainPage"
+             Title="My ToDos">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add ToDo" Clicked="OnAddToDoClicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <CollectionView x:Name="collectionView"
+                    SelectionMode="Single"
+                    SelectionChanged="OnSelectionChanged"
+                    Margin="30">
+
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"></LinearItemsLayout>
+        </CollectionView.ItemsLayout>
+        
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Label Text="{Binding ToDoName}" FontSize="Medium" Margin="20"></Label>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+    
+</ContentPage>

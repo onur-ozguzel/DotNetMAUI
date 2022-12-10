@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoClient.Pages.ManageToDoPage"
+             Title="Manage ToDo">
+
+    <!--<ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="0,5,0,5"></Setter>
+        </Style>            
+    </ContentPage.Resources>
+    
+    <VerticalStackLayout Margin="20">
+        <Label Text="What do you want to do?"></Label>
+        <Entry Text="{Binding Path=ToDo.ToDoName}" Placeholder="Enter Item"></Entry>
+        <Button Text="Save" Clicked="OnSaveButtonClicked"></Button>
+        <Button Text="Delete" Clicked="OnDeleteButtonClicked"></Button>
+        <Button Text="Cancel" Clicked="OnCancelButtonClicked"></Button>
+    </VerticalStackLayout>-->
+
+    <Grid RowDefinitions="*,Auto" ColumnDefinitions="*,*,*" ColumnSpacing="5">
+        <TableView Intent="Data" Grid.Row="0" Grid.ColumnSpan="3">
+            <TableRoot>
+                <TableSection Title="What do you want to do?">
+                    <EntryCell Text="{Binding Path=ToDo.ToDoName}" Placeholder="Enter Item"></EntryCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <Button Text="Save" Clicked="OnSaveButtonClicked" Grid.Row="1" Grid.Column="0" Margin="20,5"></Button>
+        <Button Text="Delete" Clicked="OnDeleteButtonClicked" Grid.Row="1" Grid.Column="1" Margin="0,5"></Button>
+        <Button Text="Cancel" Clicked="OnCancelButtonClicked" Grid.Row="1" Grid.Column="2" Margin="20,5"></Button>
+    </Grid>
+</ContentPage>
